@@ -124,7 +124,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConsultaActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        this.dispose();
+        this.dispose();//
     }//GEN-LAST:event_btnSalirActionPerformed
 
 
