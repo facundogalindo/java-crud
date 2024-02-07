@@ -4,6 +4,7 @@
  */
 package Automovil.logica;
 
+import Automovil.igu.Principal;
 import Automovil.persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +58,9 @@ public class Controladora {
         for(Usuario usu : listarUsuarios){
             if (usu.getNickname().equals (usuario)) {
                 if (usu.getPassword().equals (password)){
-                    mensaje = "bienvenido";
+                    Principal princ = new Principal();
+                    princ.setVisible(true);
+                    princ.setLocationRelativeTo(null);
                 }
                 else{
                     mensaje = "pass incorrecta";
