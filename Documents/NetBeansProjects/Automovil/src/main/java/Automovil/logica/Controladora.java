@@ -5,6 +5,7 @@
 package Automovil.logica;
 
 import Automovil.persistencia.ControladoraPersistencia;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,7 +51,45 @@ public class Controladora {
         controlPersis.modificarAuto(auto);
     }
 
+    public String validarUsuario(String usuario, String password) {
+        String mensaje="";
+        List<Usuario> listarUsuarios = controlPersis.traerUsuarios();
+        for(Usuario usu : listarUsuarios){
+            if (usu.getNickname().equals (usuario)) {
+                if (usu.getPassword().equals (password)){
+                    mensaje = "bienvenido";
+                }
+                else{
+                    mensaje = "pass incorrecta";
+                    
+                }
+            }
+            else{
+                        mensaje = "Usuario no encontrado"    ;
+            }
+                
+            }
+            return mensaje;
+        
+        }
+        /*public String validarUsuario(String usuario, String password){
+            String mensaje = "";
+            ArrayList<Usuario> listaUsuarios = controlPersis.traerUsuarios();
+            for (Usuario u : listaUsuarios){
+                if (u.getNickname().equals(usuario)){
+                    if (u.getPassword().equals(password)){
+                        mensaje ="asda";
+                        
+                        
+                    }
+                }
+
+            }
+            return mensaje;
+        }*/
+    }
+
 
 
     
-}
+

@@ -5,7 +5,9 @@
 package Automovil.persistencia;
 
 import Automovil.logica.Automovil;
+import Automovil.logica.Usuario;
 import Automovil.persistencia.exceptions.NonexistentEntityException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class ControladoraPersistencia {
     AutomovilJpaController autoJpa = new AutomovilJpaController();
-    
+    UsuarioJpaController usuarioJpa = new UsuarioJpaController();
     public void agregarAutomovil(Automovil auto) {
         autoJpa.create(auto);
     }
@@ -44,5 +46,12 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public ArrayList<Usuario> traerUsuarios() {
+        List<Usuario> lista = usuarioJpa.findUsuarioEntities();
+        ArrayList<Usuario> listaUsuarios = new ArrayList(lista);
+        return listaUsuarios;
+    }
+    
     
 }

@@ -4,7 +4,7 @@
 
 package Automovil;
 
-import Automovil.igu.Principal;
+import Automovil.igu.Login;
 
 /**
  *
@@ -13,8 +13,11 @@ import Automovil.igu.Principal;
 public class Automovil {
 
     public static void main(String[] args) {
-        Principal princ = new Principal();
+        Login login = new Login();
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
+        /*Principal princ = new Principal();
         princ.setVisible(true);
-        princ.setLocationRelativeTo(null);
+        princ.setLocationRelativeTo(null);*/
     }
 }
