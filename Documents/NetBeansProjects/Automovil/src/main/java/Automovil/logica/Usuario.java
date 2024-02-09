@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -21,15 +22,25 @@ public class Usuario implements Serializable {
     private int idUsuario;
     private String nickname;
     private String password;
+    @OneToOne
+    private TipoUsuario tipoUsuario;
     public Usuario() {
         // Constructor sin parámetros requerido por JPA
     }
-    public Usuario(int idUsuario, String nickname, String password) {
+
+    public Usuario(int idUsuario, String nickname, String password, TipoUsuario tipoUsuario) {
         this.idUsuario = idUsuario;
         this.nickname = nickname;
         this.password = password;
+        this.tipoUsuario = tipoUsuario;
+    }
+    public TipoUsuario getTipoUsuario() {
+        return tipoUsuario;
     }
 
+    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
     public int getIdUsuario() {
         return idUsuario;
     }
